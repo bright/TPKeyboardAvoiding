@@ -16,7 +16,7 @@
 - (BOOL)focusNextTextField;
 - (void)scrollToActiveTextField;
 
-@property(nonatomic, weak) id <TPKeyboardAvoidingScrollViewDelegate> tpDelegate;
+@property(nonatomic, assign) id <TPKeyboardAvoidingScrollViewDelegate> tpDelegate;
 
 @end
 
