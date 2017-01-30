@@ -13,4 +13,11 @@
 - (void)contentSizeToFit;
 - (BOOL)focusNextTextField;
 - (void)scrollToActiveTextField;
+
+@property(nonatomic, weak) id <TPKeyboardAvoidingScrollViewDelegate> tpDelegate;
+
+@end
+
+@protocol TPKeyboardAvoidingScrollViewDelegate
+- (void)didTapDoneButtonFromTextField:(UITextField *)textField;
 @end

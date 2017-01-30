@@ -56,7 +56,7 @@
 
 - (BOOL)focusNextTextField {
     return [self TPKeyboardAvoiding_focusNextTextField];
-    
+
 }
 - (void)scrollToActiveTextField {
     return [self TPKeyboardAvoiding_scrollToActiveTextField];
@@ -79,6 +79,9 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ( ![self focusNextTextField] ) {
         [textField resignFirstResponder];
+    }
+    if (textField.returnKeyType == UIReturnKeyDone) {
+        [[self tpDelegate] didTapDoneButtonFromTextField:textField];
     }
     return YES;
 }
